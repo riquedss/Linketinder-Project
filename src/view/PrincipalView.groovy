@@ -1,6 +1,6 @@
 package view
 
-class Principal {
+class PrincipalView {
     static def main(){
         String opcao
 
@@ -11,6 +11,7 @@ class Principal {
         opcao = input.nextLine()
 
         while (opcao != '0'){
+            limparTerminal()
             if (opcao == '1'){
                 PessoaView.listarCandidatos()
             } else if (opcao == '2'){
@@ -37,5 +38,21 @@ class Principal {
         println("|(2) - Listar Empresas                              |");
         println("|(0) - sair                                         |");
         println("|___________________________________________________|");
+    }
+
+    private static void limparTerminal(){
+        try {
+            ProcessBuilder builder = new ProcessBuilder();
+            builder.command("bash", "-c", "clear");
+            Process processo = builder.start();
+
+            BufferedReader reader = new BufferedReader(new InputStreamReader(processo.getInputStream()));
+            String linha;
+            while ((linha = reader.readLine()) != null) {
+                System.out.println(linha);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
