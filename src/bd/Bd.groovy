@@ -1,0 +1,4 @@
+package bd
+
+class Bd {
+}
