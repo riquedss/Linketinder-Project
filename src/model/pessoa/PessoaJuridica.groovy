@@ -1,6 +1,6 @@
 package model.pessoa
-
 import model.Pessoa
 
-class Juridica extends Pessoa {
+class PessoaJuridica extends Pessoa {
+    String cnpj, pais
 }

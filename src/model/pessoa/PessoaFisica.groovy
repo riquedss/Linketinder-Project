@@ -1,7 +1,6 @@
 package model.pessoa
 import model.Pessoa
 
-class Fisica extends Pessoa {
-    String cpf
-    Date DataNascimento
+class PessoaFisica extends Pessoa {
+    String cpf, DataNascimento
 }
