@@ -1,5 +1,5 @@
 package model
 
-class Competencias {
+class Competencia {
     String nome, AreaConhecimento
 }
